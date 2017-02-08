@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Human Interaction Screen</title>
+        <style type = "text/css">
+            .button{
+                -moz-box-shadow:inset 0px -3px 7px 0px #29bbff;
+                -webkit-box-shadow:inset 0px -3px 7px 0px #29bbff;
+                box-shadow:inset 0px -3px 7px 0px #29bbff;
+                background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #2dabf9), color-stop(1, #0688fa));
+                background:-moz-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+                background:-webkit-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+                background:-o-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+                background:-ms-linear-gradient(top, #2dabf9 5%, #0688fa 100%);
+                background:linear-gradient(to bottom, #2dabf9 5%, #0688fa 100%);
+                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#2dabf9', endColorstr='#0688fa',GradientType=0);
+                background-color:#2dabf9;
+                -moz-border-radius:10px;
+                -webkit-border-radius:10px;
+                border-radius:10px;
+                display:inline-block;
+                cursor:pointer;
+                color:#ffffff;
+                font-family:Arial;
+                font-size:15px;
+                padding:9px 23px;
+                text-decoration:none;
+                text-shadow:0px 1px 0px #263666;
+            }
+            .button:hover{
+                background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #0688fa), color-stop(1, #2dabf9));
+                background:-moz-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+                background:-webkit-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+                background:-o-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+                background:-ms-linear-gradient(top, #0688fa 5%, #2dabf9 100%);
+                background:linear-gradient(to bottom, #0688fa 5%, #2dabf9 100%);
+                filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#0688fa', endColorstr='#2dabf9',GradientType=0);
+                background-color:#0688fa;
+            }
+            .button:active{
+                position:relative;
+                top:1px;
+            }
+        </style>
+    </head>
+    <body>
+        <p>Human Interaction Screen</p>
+        <script src="https://d3js.org/d3.v4.min.js"></script>
+        <script>
+
+            var button = d3.select("body").append("input")
+            .attr("class", "button")
+            .attr("type", "submit")
+            .attr("value", "Car Information")
+            .attr("id", "info")
+            .attr("onclick", "Info();");
+            
+            var button = d3.select("body").append("input")
+            .attr("class", "button")
+            .attr("type", "submit")
+            .attr("value", "AutoPilot")
+            .attr("id", "AP")
+            .attr("onclick", "autoPilot();");
+            
+            var button = d3.select("body").append("input")
+            .attr("class", "button")
+            .attr("type", "submit")
+            .attr("value", "Engine Start/Stop")
+            .attr("id", "Engine")
+            .attr("onclick", "engine();");
+            
+            function Info(){
+                d3.select("#info").remove();
+                d3.select("#AP").remove();
+                d3.select("#Engine").remove();
+                var button = d3.select("body").append("input")
+                .attr("class", "button")
+                .attr("type", "submit")
+                .attr("value", "Speed")
+                .attr("id", "Sp");
+                var button = d3.select("body").append("input")
+                .attr("class", "button")
+                .attr("type", "submit")
+                .attr("value", "GPS")
+                .attr("id", "gps");
+                var button = d3.select("body").append("input")
+                .attr("class", "button")
+                .attr("type", "submit")
+                .attr("value", "A/C")
+                .attr("id", "ac");
+                var button = d3.select("body").append("input")
+                .attr("class", "button")
+                .attr("type", "submit")
+                .attr("value", "Back")
+                .attr("id", "back")
+                .attr("onclick", ("Back();"));
+            }
+        
+            function autoPilot(){
+                d3.select("#info").remove();
+                d3.select("#AP").remove();
+                d3.select("#Engine").remove();
+                var button = d3.select("body").append("input")
+                .attr("class", "button")
+                .attr("type", "submit")
+                .attr("value", "Auto Pilot Status")
+                .attr("id", "APStatus");
+                var button = d3.select("body").append("input")
+                .attr("class", "button")
+                .attr("type", "submit")
+                .attr("value", "Turn On")
+                .attr("id", "turnOn");
+                var button = d3.select("body").append("input")
+                .attr("class", "button")
+                .attr("type", "submit")
+                .attr("value", "Turn Off")
+                .attr("id", "turnOff");
+                var button = d3.select("body").append("input")
+                .attr("class", "button")
+                .attr("type", "submit")
+                .attr("value", "Back")
+                .attr("id", "back")
+                .attr("onclick", ("Back();"));
+            }
+        
+            function engine(){
+                d3.select("#info").remove();
+                d3.select("#AP").remove();
+                d3.select("#Engine").remove();
+                var button = d3.select("body").append("input")
+                .attr("class", "button")
+                .attr("type", "submit")
+                .attr("value", "Engine Status")
+                .attr("id", "engineStatus");
+                var button = d3.select("body").append("input")
+                .attr("class", "button")
+                .attr("type", "submit")
+                .attr("value", "Turn On")
+                .attr("id", "turnOn");
+                var button = d3.select("body").append("input")
+                .attr("class", "button")
+                .attr("type", "submit")
+                .attr("value", "Turn Off")
+                .attr("id", "turnOff");
+                var button = d3.select("body").append("input")
+                .attr("class", "button")
+                .attr("type", "submit")
+                .attr("value", "Back")
+                .attr("id", "back")
+                .attr("onclick", ("Back();"));
+            }
+        
+            function Back(){
+                d3.select("#Sp").remove();
+                d3.select("#gps").remove();
+                d3.select("#ac").remove();
+                d3.select("#APStatus").remove();
+                d3.select("#engineStatus").remove();
+                d3.select("#turnOn").remove();
+                d3.select("#turnOff").remove();
+                d3.select("#back").remove();
+                var button = d3.select("body").append("input")
+                .attr("class", "button")
+                .attr("type", "submit")
+                .attr("value", "Car Information")
+                .attr("id", "info")
+                .attr("onclick", "Info();");
+                var button = d3.select("body").append("input")
+                .attr("class", "button")
+                .attr("type", "submit")
+                .attr("value", "AutoPilot")
+                .attr("id", "AP")
+                .attr("onclick", "autoPilot();");
+                var button = d3.select("body").append("input")
+                .attr("class", "button")
+                .attr("type", "submit")
+                .attr("value", "Engine Start/Stop")
+                .attr("id", "Engine")
+                .attr("onclick", "engine();");
+            }
+        
+        </script>
+    </body>
+</html>
